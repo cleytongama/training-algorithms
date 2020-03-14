@@ -34,14 +34,11 @@ const k = 3
 // }
 
 function solution(A, K) {
-    // if A is meant to be shifted by its own length (K) then just return the array
     if (A.length === K || K === 0) {
         return A
     }
 
     const rotations = Array(K);
-
-    // Run K number of times saving last element in the array as a temporary variable, adding it to the front of the array and removing the last element
     for(rotation of rotations){
         let lastElement = A[A.length - 1]
         A.unshift(lastElement)
