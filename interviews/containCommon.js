@@ -21,7 +21,7 @@ function containCommonItem2(array1, array2) {
     }, {})
 
     for (let element of array2) {
-        if (arrayInObject[element]) {
+        if (element in arrayInObject)    {
             return true;
         }
     }
