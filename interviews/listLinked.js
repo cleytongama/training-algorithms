@@ -135,3 +135,126 @@ console.log(list.length())
 // console.log(list.getByIndex(5))
 // console.log(list.getByValue(3))
 
+class MyLikedList {
+    constructor(value) {
+        this.head = {
+            value,
+            next: null
+        }
+        this.tail = this.head
+        this.length = 1
+    }
+
+    no(value) {
+        return {
+            value,
+            next: null
+        }
+    }
+
+    append(value) {
+
+        let node = this.no(value)
+
+        this.tail.next = node
+
+        this.tail = node
+
+        this.length++
+
+        return this
+    }
+
+    prepend(value) {
+
+        let node = this.no(value)
+
+        node.next = this.head
+
+        this.head = node
+
+        this.length++
+
+        return this
+
+    }
+
+    insert(index, value) {
+
+        let node = this.head
+        let newNode = this.no(value)
+        let beforeNode = null
+
+        if (index >= this.length) {
+            this.append(value)
+            return this
+        }
+
+        if (index === 0) {
+            this.prepend(value)
+            return this
+        }
+
+        while (index > 0) {
+            beforeNode = node
+            node = node.next
+            index--
+        }
+
+        beforeNode.next = newNode
+        newNode.next = node
+
+        this.length++
+        return this
+    }
+
+    remove(index) {
+
+        let nodeFound = this.head
+        let beforeNode = null
+
+        if (index === 0) {
+            this.head = this.head.next
+            return this
+        }
+
+        while (index !== 0) {
+            beforeNode = nodeFound
+            nodeFound = nodeFound.next
+            index--
+        }
+
+        beforeNode.next = nodeFound.next
+
+        return this
+    }
+
+    get(value) {
+
+    }
+
+    print() {
+        console.log(JSON.stringify(this.head))
+    }
+}
+// 10 >> 16 >> 4 
+// 10 >> 2 >> 16 >> 4 
+
+const mylikedList = new MyLikedList(10)
+
+console.log(mylikedList.append(11))
+console.log(mylikedList.append(12))
+console.log(mylikedList.append(13))
+console.log(mylikedList.append(14))
+console.log(mylikedList.append(15))
+console.log(mylikedList.append(16))
+mylikedList.print()
+mylikedList.remove(1)
+// console.log(mylikedList.append(5))
+// console.log(mylikedList.append(8))
+// console.log(mylikedList.prepend(2))
+// console.log(mylikedList.insert(0, 2))
+// console.log(mylikedList.insert(100, 2))
+
+mylikedList.print()
+console.log(mylikedList.append(17))
