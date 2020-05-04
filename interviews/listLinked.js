@@ -152,6 +152,12 @@ class MyLikedList {
         }
     }
 
+    getBeforeNode(index) {
+
+        let node = this.head
+        // console.log(node)
+    }
+
     append(value) {
 
         let node = this.no(value)
@@ -242,19 +248,21 @@ class MyLikedList {
 
 const mylikedList = new MyLikedList(10)
 
-console.log(mylikedList.append(11))
-console.log(mylikedList.append(12))
-console.log(mylikedList.append(13))
-console.log(mylikedList.append(14))
-console.log(mylikedList.append(15))
-console.log(mylikedList.append(16))
-mylikedList.print()
-mylikedList.remove(1)
+mylikedList.getBeforeNode(2)
+
+// console.log(mylikedList.append(11))
+// console.log(mylikedList.append(12))
+// console.log(mylikedList.append(13))
+// console.log(mylikedList.append(14))
+// console.log(mylikedList.append(15))
+// console.log(mylikedList.append(16))
+// mylikedList.print()
+// mylikedList.remove(1)
 // console.log(mylikedList.append(5))
 // console.log(mylikedList.append(8))
 // console.log(mylikedList.prepend(2))
 // console.log(mylikedList.insert(0, 2))
 // console.log(mylikedList.insert(100, 2))
 
-mylikedList.print()
-console.log(mylikedList.append(17))
+// mylikedList.print()
+// console.log(mylikedList.append(17))
