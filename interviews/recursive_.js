@@ -17,7 +17,7 @@ function findFactorialIterative(number) {
 }
 
 function findFactorialRecursive(number) {
-    console.trace()
+    // console.trace()
     return (number === 0 || number === 1) ? 1 : number * findFactorialRecursive(number - 1)
 }
 

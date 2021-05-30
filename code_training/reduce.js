@@ -61,28 +61,27 @@ const countNames = names.reduce((acc, current) => {
 }, {})
 console.log("Contando valores iguais em um objeto", countNames)
 
-// // Agrupando por propriedade
-// const pessoas = [
-//     { nome: 'Alice', idade: 21 },
-//     { nome: 'Max', idade: 20 },
-//     { nome: 'Max', idade: 25 }
-// ];
+// Agrupando por propriedade
+const pessoas = [
+    { nome: 'Alice', idade: 21 },
+    { nome: 'Max', idade: 20 },
+    { nome: 'Max', idade: 25 }
+];
 
 
-// function groupByProperty(array, property) {
-//     const groups = array.reduce((acc, current) => {
-//         let key = current[property]
-//         if (!acc[key]) {
-//             acc[key] = []
-//         }
-//         acc[key].push(current)
-//         return acc
-//     }, {})
-
-//     return groups
-// }
-// const groups = groupByProperty(pessoas, 'nome');
-// console.log("Agrupando valores por parametros", groups)
+function groupByProperty(array, property) {
+    const groups = array.reduce((acc, current) => {
+        let key = current[property]
+        if (!acc[key]) {
+            acc[key] = []
+        }
+        acc[key].push(current)
+        return acc
+    }, {})
+    return groups
+}
+const groups = groupByProperty(pessoas, 'nome');
+console.log("Agrupando valores por parametros", groups)
 
 // Juntando todos os books
 const friends = [{
